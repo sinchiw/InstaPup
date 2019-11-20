@@ -38,6 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = " Email"
+        textField.text = "moo@aol.com"
         textField.backgroundColor = .init(white: 0, alpha: 0.035)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
@@ -62,6 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     let userNameTextField: UITextField = {
         let textField = UITextField()
+        textField.text = "meowFuzzy"
         textField.placeholder = " Username"
         textField.backgroundColor = .init(white: 0, alpha: 0.035)
         textField.borderStyle = .roundedRect
@@ -76,6 +78,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
+        textField.text = "123456"
         textField.backgroundColor = .init(white: 0, alpha: 0.035)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
@@ -110,7 +113,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("Sign Up button")
 
         /*to check the empty strings*/
-        guard let email = emailTextField.text else {
+        guard let email = emailTextField.text  else {
+
+
 
             print("error")
             return}
@@ -152,8 +157,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         if let error = err {
                             print("failed to save to database", error)
                         }
-
+//                        self.navigationController?.pushViewController(MainTabBarController(), animated: true)
                         print("succesfully saved in the database")
+//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "second") as? MainTabBarController
+//                        self.navigationController?.pushViewController(vc!, animated: true)
                     }
                 }
             }

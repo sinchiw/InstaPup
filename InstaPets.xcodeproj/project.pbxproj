@@ -14,13 +14,16 @@
 		CEABD87F236B408C00A88BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD87E236B408C00A88BB3 /* AppDelegate.swift */; };
 		CEABD881236B408C00A88BB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD880236B408C00A88BB3 /* SceneDelegate.swift */; };
 		CEABD883236B408C00A88BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD882236B408C00A88BB3 /* ViewController.swift */; };
-		CEABD886236B408C00A88BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEABD884236B408C00A88BB3 /* Main.storyboard */; };
 		CEABD889236B408C00A88BB3 /* InstaPets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEABD887236B408C00A88BB3 /* InstaPets.xcdatamodeld */; };
 		CEABD88B236B408D00A88BB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEABD88A236B408D00A88BB3 /* Assets.xcassets */; };
 		CEABD88E236B408D00A88BB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEABD88C236B408D00A88BB3 /* LaunchScreen.storyboard */; };
 		CEABD899236B408D00A88BB3 /* InstaPetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD898236B408D00A88BB3 /* InstaPetsTests.swift */; };
 		CEABD8A4236B408D00A88BB3 /* InstaPetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8A3236B408D00A88BB3 /* InstaPetsUITests.swift */; };
 		CEABD8B3236B6AAF00A88BB3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8B2236B6AAF00A88BB3 /* Extension.swift */; };
+		CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE626292384CACF005471DE /* MainTabBarController.swift */; };
+		CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6262B2384DA4E005471DE /* UserProfileController.swift */; };
+		CEE6262E2384E6BF005471DE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6262D2384E6BF005471DE /* Storyboard.storyboard */; };
+		CEE626302384E787005471DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6262F2384E787005471DE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,6 @@
 		CEABD87E236B408C00A88BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEABD880236B408C00A88BB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEABD882236B408C00A88BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CEABD885236B408C00A88BB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEABD888236B408C00A88BB3 /* InstaPets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaPets.xcdatamodel; sourceTree = "<group>"; };
 		CEABD88A236B408D00A88BB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEABD88D236B408D00A88BB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,10 @@
 		CEABD8A3236B408D00A88BB3 /* InstaPetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPetsUITests.swift; sourceTree = "<group>"; };
 		CEABD8A5236B408D00A88BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEABD8B2236B6AAF00A88BB3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CEE626292384CACF005471DE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CEE6262B2384DA4E005471DE /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		CEE6262D2384E6BF005471DE /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		CEE6262F2384E787005471DE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E815848BBAEF4217DDA5E1C8 /* Pods_InstaPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A98A25256FD6855C783789 /* Pods-InstaPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPets.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPets/Pods-InstaPets.release.xcconfig"; sourceTree = "<group>"; };
 		F1BC54AA0864174ED6C6753F /* Pods-InstaPets-InstaPetsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPets-InstaPetsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPets-InstaPetsUITests/Pods-InstaPets-InstaPetsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,13 +140,16 @@
 			children = (
 				CEABD8B1236B6A8000A88BB3 /* Utilities */,
 				CEABD87E236B408C00A88BB3 /* AppDelegate.swift */,
+				CEE626292384CACF005471DE /* MainTabBarController.swift */,
+				CEE6262B2384DA4E005471DE /* UserProfileController.swift */,
 				CEABD880236B408C00A88BB3 /* SceneDelegate.swift */,
 				CEABD882236B408C00A88BB3 /* ViewController.swift */,
-				CEABD884236B408C00A88BB3 /* Main.storyboard */,
+				CEE6262F2384E787005471DE /* Main.storyboard */,
 				CE183F2A237BA7CD0074EDC3 /* GoogleService-Info.plist */,
 				CEABD88A236B408D00A88BB3 /* Assets.xcassets */,
 				CEABD88C236B408D00A88BB3 /* LaunchScreen.storyboard */,
 				CEABD88F236B408D00A88BB3 /* Info.plist */,
+				CEE6262D2384E6BF005471DE /* Storyboard.storyboard */,
 				CEABD887236B408C00A88BB3 /* InstaPets.xcdatamodeld */,
 			);
 			path = InstaPets;
@@ -294,10 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE626302384E787005471DE /* Main.storyboard in Resources */,
 				CE183F2B237BA7CE0074EDC3 /* GoogleService-Info.plist in Resources */,
+				CEE6262E2384E6BF005471DE /* Storyboard.storyboard in Resources */,
 				CEABD88E236B408D00A88BB3 /* LaunchScreen.storyboard in Resources */,
 				CEABD88B236B408D00A88BB3 /* Assets.xcassets in Resources */,
-				CEABD886236B408C00A88BB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +439,9 @@
 			files = (
 				CEABD8B3236B6AAF00A88BB3 /* Extension.swift in Sources */,
 				CEABD883236B408C00A88BB3 /* ViewController.swift in Sources */,
+				CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */,
 				CEABD889236B408C00A88BB3 /* InstaPets.xcdatamodeld in Sources */,
+				CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */,
 				CEABD87F236B408C00A88BB3 /* AppDelegate.swift in Sources */,
 				CEABD881236B408C00A88BB3 /* SceneDelegate.swift in Sources */,
 			);
@@ -467,14 +479,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CEABD884236B408C00A88BB3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEABD885236B408C00A88BB3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CEABD88C236B408D00A88BB3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

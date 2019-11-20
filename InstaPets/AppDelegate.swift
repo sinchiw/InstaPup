@@ -14,16 +14,35 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
+    var mainTabVC : MainTabBarController?
+    var testNavigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //to connect to firebase
-        RunLoop.current.run(until: Date(timeIntervalSinceNow: 2.0))
+
+//        RunLoop.current.run(until: Date(timeIntervalSinceNow: 5.0))
+
+
+        //connnect to firebase
         FirebaseApp.configure()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        if let window = window {
+//            window.backgroundColor = UIColor.white
+//            window.rootViewController = ViewController()
+//            window.makeKeyAndVisible()
+//        }
+//
+
+
+
+
         return true
     }
 
     // MARK: UISceneSession Lifecycle
+
+    
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
