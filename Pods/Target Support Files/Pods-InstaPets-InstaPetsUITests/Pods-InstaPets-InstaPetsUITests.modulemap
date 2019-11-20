@@ -1,0 +1,6 @@
+framework module Pods_InstaPets_InstaPetsUITests {
+  umbrella header "Pods-InstaPets-InstaPetsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
