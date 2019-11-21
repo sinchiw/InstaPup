@@ -16,7 +16,7 @@ class MainTabBarController : UITabBarController {
         view.backgroundColor = .blue
         //flowlout, collection view in horizontal or vertical
         let layout = UICollectionViewFlowLayout()
-        let userProfileController = UserProfileViewController(collectionViewLayout: layout)
+        let userProfileController = UserProfileController(collectionViewLayout: layout)
 
 //        let controller = [userProfileController]
         let navCon = UINavigationController(rootViewController: userProfileController)

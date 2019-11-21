@@ -19,11 +19,13 @@
 		CEABD88E236B408D00A88BB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEABD88C236B408D00A88BB3 /* LaunchScreen.storyboard */; };
 		CEABD899236B408D00A88BB3 /* InstaPetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD898236B408D00A88BB3 /* InstaPetsTests.swift */; };
 		CEABD8A4236B408D00A88BB3 /* InstaPetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8A3236B408D00A88BB3 /* InstaPetsUITests.swift */; };
-		CEABD8B3236B6AAF00A88BB3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8B2236B6AAF00A88BB3 /* Extension.swift */; };
+		CEABD8B3236B6AAF00A88BB3 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8B2236B6AAF00A88BB3 /* ExtensionColors.swift */; };
 		CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE626292384CACF005471DE /* MainTabBarController.swift */; };
 		CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6262B2384DA4E005471DE /* UserProfileController.swift */; };
 		CEE6262E2384E6BF005471DE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6262D2384E6BF005471DE /* Storyboard.storyboard */; };
 		CEE626302384E787005471DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6262F2384E787005471DE /* Main.storyboard */; };
+		CEE626322385D9D0005471DE /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE626312385D9D0005471DE /* UserProfileHeader.swift */; };
+		CEE6263423871242005471DE /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6263323871242005471DE /* ExtensionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,11 +67,13 @@
 		CEABD89F236B408D00A88BB3 /* InstaPetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaPetsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEABD8A3236B408D00A88BB3 /* InstaPetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPetsUITests.swift; sourceTree = "<group>"; };
 		CEABD8A5236B408D00A88BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEABD8B2236B6AAF00A88BB3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CEABD8B2236B6AAF00A88BB3 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		CEE626292384CACF005471DE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CEE6262B2384DA4E005471DE /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CEE6262D2384E6BF005471DE /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		CEE6262F2384E787005471DE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CEE626312385D9D0005471DE /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		CEE6263323871242005471DE /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		E815848BBAEF4217DDA5E1C8 /* Pods_InstaPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A98A25256FD6855C783789 /* Pods-InstaPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPets.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPets/Pods-InstaPets.release.xcconfig"; sourceTree = "<group>"; };
 		F1BC54AA0864174ED6C6753F /* Pods-InstaPets-InstaPetsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPets-InstaPetsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPets-InstaPetsUITests/Pods-InstaPets-InstaPetsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,9 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				CEABD8B1236B6A8000A88BB3 /* Utilities */,
-				CEABD87E236B408C00A88BB3 /* AppDelegate.swift */,
+				CEE626352387135E005471DE /* Profile */,
 				CEE626292384CACF005471DE /* MainTabBarController.swift */,
-				CEE6262B2384DA4E005471DE /* UserProfileController.swift */,
+				CEABD87E236B408C00A88BB3 /* AppDelegate.swift */,
 				CEABD880236B408C00A88BB3 /* SceneDelegate.swift */,
 				CEABD882236B408C00A88BB3 /* ViewController.swift */,
 				CEE6262F2384E787005471DE /* Main.storyboard */,
@@ -176,9 +180,19 @@
 		CEABD8B1236B6A8000A88BB3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CEABD8B2236B6AAF00A88BB3 /* Extension.swift */,
+				CEABD8B2236B6AAF00A88BB3 /* ExtensionColors.swift */,
+				CEE6263323871242005471DE /* ExtensionView.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CEE626352387135E005471DE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CEE626312385D9D0005471DE /* UserProfileHeader.swift */,
+				CEE6262B2384DA4E005471DE /* UserProfileController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F1425263E16857CA8637AA3B /* Pods */ = {
@@ -437,9 +451,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEABD8B3236B6AAF00A88BB3 /* Extension.swift in Sources */,
+				CEABD8B3236B6AAF00A88BB3 /* ExtensionColors.swift in Sources */,
+				CEE6263423871242005471DE /* ExtensionView.swift in Sources */,
 				CEABD883236B408C00A88BB3 /* ViewController.swift in Sources */,
 				CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */,
+				CEE626322385D9D0005471DE /* UserProfileHeader.swift in Sources */,
 				CEABD889236B408C00A88BB3 /* InstaPets.xcdatamodeld in Sources */,
 				CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */,
 				CEABD87F236B408C00A88BB3 /* AppDelegate.swift in Sources */,

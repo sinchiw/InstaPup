@@ -26,16 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //connnect to firebase
         FirebaseApp.configure()
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        if let window = window {
-//            window.backgroundColor = UIColor.white
-//            window.rootViewController = ViewController()
-//            window.makeKeyAndVisible()
-//        }
-//
-
-
-
 
         return true
     }
