@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
 
 
-
+//MARK: EmailTextField
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = " Email"
@@ -47,6 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return textField
     }()
 
+    //MARK: Button change color if sign up is filled
     @objc func handleTextInput() {
 
         let formValid = emailTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0 && userNameTextField.text?.count ?? 0 > 0
@@ -59,7 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-
+//MARK: UserName TextField
 
     let userNameTextField: UITextField = {
         let textField = UITextField()
@@ -74,7 +75,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }()
 
 
-
+//MARK: Password Text Field
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
@@ -87,7 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return textField
     }()
 
-
+//MARK: signUpButton
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
 /*       button.backgroundColor = UIColor(red: 149/255, green: 204/255, blue: 244/255, alpha: 1) */
@@ -114,8 +115,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         /*to check the empty strings*/
         guard let email = emailTextField.text  else {
-
-
 
             print("error")
             return}
@@ -157,14 +156,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         if let error = err {
                             print("failed to save to database", error)
                         }
-//                        self.navigationController?.pushViewController(MainTabBarController(), animated: true)
+
                         print("succesfully saved in the database")
-//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "second") as? MainTabBarController
-//                        self.navigationController?.pushViewController(vc!, animated: true)
+
                     }
                 }
             }
-
 
 //            //                using database but this set up a single value
 //            Database.database().reference().child("users").setValue(values) { (err, ref) in
@@ -186,6 +183,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
 
     }
+    //MARK: addPhotoButton
 
     let AddPhotoButton: UIButton = {
         let button = UIButton()

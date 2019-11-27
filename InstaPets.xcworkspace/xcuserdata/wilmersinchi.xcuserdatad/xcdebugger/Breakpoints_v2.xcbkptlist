@@ -7,16 +7,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "30508BCB-E3B5-47EB-BCAF-D9B4D2DF0018"
+            uuid = "5947DEAA-1A63-498B-8734-499642064A20"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaPets/ViewController.swift"
+            filePath = "InstaPets/Profile/UserProfileHeader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "handleSignUp()"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "user"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5947DEAA-1A63-498B-8734-499642064A20 - 8625c0e1432f7c1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InstaPets.UserProfileHeader.user.modify : Swift.Optional&lt;InstaPets.User&gt;"
+                  moduleName = "InstaPets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wilmersinchi/Documents/LearningMaterials/InstaPets/InstaPets/Profile/UserProfileHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "5947DEAA-1A63-498B-8734-499642064A20 - cc8ded44f6e8981"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InstaPets.UserProfileHeader.user.modify : Swift.Optional&lt;InstaPets.User&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "InstaPets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wilmersinchi/Documents/LearningMaterials/InstaPets/InstaPets/Profile/UserProfileHeader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0ED842AE-BF26-4D4E-8D37-C45288E7BE18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaPets/Profile/UserProfileHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "user"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "092CF229-B62B-45A7-A989-A81DEECCD55D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaPets/Profile/UserProfileHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "setupProfileImage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

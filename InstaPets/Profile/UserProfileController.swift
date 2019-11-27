@@ -23,7 +23,7 @@ struct User {
 }
 
 class UserProfileController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    let cellId = "cellId"
     override func viewDidLoad() {
         super .viewDidLoad()
 
@@ -31,8 +31,11 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
         //set the title of the viewController
 //        navigationItem.title = Auth.auth().currentUser?.uid
         fecthUser()
+        /*register the collectionView*/
         collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
-    
+        /*register the cell*/
+        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+
 
 
         //change the size of the thing to lower the sizer of the image
@@ -52,9 +55,36 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
 
 
 
-
+    //MARK: header section of the app, profile, follower.....etc
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 200)
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        cell.backgroundColor = .purple
+        cell.layer.borderColor = UIColor.black.cgColor
+        return cell
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+/*for the collectionView Cell*/
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.width-2) / 3
+        return CGSize(width: width, height: width)
     }
 
     /*this function is only accesible in UserProfileViewController*/
@@ -66,10 +96,11 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
             print(snapshot.value!)
             guard let dictionary = snapshot.value as? [String:Any] else {return}
 //            let userName = dictionary["username"] as? String
+            print(dictionary)
             self.user = User(dictionary: dictionary)
             
             self.navigationItem.title = self.user?.username
-            print(self.user!.profileImageUrl)
+//            print(self.user!.profileImageUrl)
             self.collectionView?.reloadData()
 
         }
