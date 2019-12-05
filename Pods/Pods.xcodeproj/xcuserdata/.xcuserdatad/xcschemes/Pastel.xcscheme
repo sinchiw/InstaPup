@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D400E3EAC2C7E1A6AD92F2900C8349BC"
-               BlueprintName = "Pods-InstaPets-InstaPetsUITests"
+               BlueprintIdentifier = "409E92BC21862F90CD05B14498505381"
+               BlueprintName = "Pastel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-InstaPets-InstaPetsUITests.framework">
+               BuildableName = "Pastel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

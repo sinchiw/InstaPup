@@ -8,10 +8,28 @@
 
 //import Foundation
 import UIKit
+import FirebaseAuth
 
 class MainTabBarController : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+         check if the user isnt log in 
+         */
+        
+        if Auth.auth().currentUser == nil {
+
+            //show if not logg in
+            DispatchQueue.main.async{
+                let loginController = LoginController()
+                let navController = UINavigationController(rootViewController: loginController)
+                navController.modalPresentationStyle = .fullScreen
+                self.present(navController, animated: true, completion: nil)
+            }
+            return
+        }
+
+
 
         view.backgroundColor = .blue
         //flowlout, collection view in horizontal or vertical

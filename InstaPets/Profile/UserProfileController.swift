@@ -36,7 +36,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
         /*register the cell*/
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
 
-
+        setupLogOutButton()
 
         //change the size of the thing to lower the sizer of the image
         
@@ -87,11 +87,49 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
         return CGSize(width: width, height: width)
     }
 
+    /*set up for the log out button*/
+
+    fileprivate func setupLogOutButton() {
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(handleLogOut), imageName: "settings")
+        //(image: image, style: .plain, target: self, action: #selector(handleLogOut))
+    }
+
+    @objc func handleLogOut() {
+
+        print("logging out")
+        displayAlert(title: "Log Out", message: "Are you sure?")
+    }
+
+    func displayAlert(title: String, message: String) {
+
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        alertController.addAction(UIAlertAction(title: "LOG OUT", style: .destructive, handler: {(_) in
+            print("loggin out")
+            do {
+                try Auth.auth().signOut()
+            } catch let signOutError {
+                print("Failed to sign out", signOutError)
+            }
+
+
+        }))
+        alertController.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
+         self.present(alertController, animated: true, completion: nil)
+
+
+
+    }
+
+
     /*this function is only accesible in UserProfileViewController*/
     var user: User?
+    //MARK: fecth user func
     fileprivate func fecthUser() {
 
         guard let uid = Auth.auth().currentUser?.uid else {return}
+        
         Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value!)
             guard let dictionary = snapshot.value as? [String:Any] else {return}

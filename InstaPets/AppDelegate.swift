@@ -8,15 +8,18 @@
 
 import UIKit
 import CoreData
-import Firebase
+import FirebaseAuth
+import FirebaseCore
+import FirebaseDatabase
+import FirebaseStorage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-    var window: UIWindow?
-    var mainTabVC : MainTabBarController?
-    var testNavigationController: UINavigationController?
+//
+//    var window: UIWindow?
+//    var mainTabVC : MainTabBarController?
+//    var testNavigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         //connnect to firebase
-        FirebaseApp.configure()
+        FirebaseApp.configure() 
 
         return true
     }

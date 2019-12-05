@@ -11,7 +11,7 @@ target 'InstaPets' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  
+  pod 'Pastel'
   target 'InstaPetsTests' do
     inherit! :search_paths
     # Pods for testing

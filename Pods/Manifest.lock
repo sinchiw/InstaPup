@@ -91,6 +91,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Pastel (0.6.0)
 
 DEPENDENCIES:
   - Firebase
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - Pastel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -118,6 +120,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Pastel
 
 SPEC CHECKSUMS:
   Firebase: 2d750c54cda57d5a6ae31212cfe5cc813c6be7e4
@@ -137,7 +140,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
 
-PODFILE CHECKSUM: 990adc01d1943b6a60bf7df62ec586e49dfeaa0a
+PODFILE CHECKSUM: eaf3005b4c788033e873fcbec39f0b5c782998dc
 
 COCOAPODS: 1.5.2

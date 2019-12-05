@@ -14,22 +14,41 @@ import FirebaseCore
 
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         // Do any additional setup after loading the view.
 
         //subview has to be added first or it will crash
         //adding it to the view
+//        view.addSubview(label)
         view.addSubview(AddPhotoButton)
 
         //constraint for the button, textfield
+//         labelLayOut()
         addingButtonLayout()
 
+
+//        view.addSubview(label)
+
         setupInputField()
+        haveAnAccountButton()
     }
+
+
+//MARK: TitleLabel
+
+    let label: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "C0 / Lab"
+        titleLabel.textAlignment = .center
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
+
+    }()
 
 
 
@@ -227,15 +246,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func addingButtonLayout(){
         //customizing the button
         AddPhotoButton.frame = CGRect(x: 0, y: 0, width: 140, height: 140)
-        //centering your button in the view
+//        //centering your button in the view
         AddPhotoButton.center = view.center
-        //adding constraint to the button
-        AddPhotoButton.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        AddPhotoButton.widthAnchor.constraint(equalToConstant: 140).isActive = true
+//        //adding constraint to the button
         AddPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        //40 pixel to the top of the view, but its is 200 becuase i want it to be in the center
-        AddPhotoButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+//        //40 pixel to the top of the view, but its is 200 becuase i want it to be in the center
+
+        AddPhotoButton.anchor(top: view.topAnchor, left: nil, right: nil, bottom: nil, paddlingTop: 100, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 140, height: 140)
     }
+
+    func labelLayOut() {
+
+        label.frame = CGRect(x: 0, y: 0, width: 0, height: 30)
+        label.center = view.center
+        label.anchor(top: view.topAnchor, left: view.leadingAnchor, right: view.rightAnchor, bottom: nil, paddlingTop: 30, paddlingLeft: 20, paddlngBottom: 0, paddlingRight: 20, width: 0, height: 30)
+
+    }
+
+    func haveAnAccountButton(){
+
+        let signUpButton : UIButton = {
+            let button = UIButton(type: .system)
+            button.setTitle("Back to Login", for: .normal)
+            button.addTarget(self, action: #selector(handlebackButton), for: .touchUpInside)
+            return button
+        }()
+        self.view.addSubview(signUpButton)
+
+        signUpButton.anchor(top: nil, left: self.view.leftAnchor, right: self.view.rightAnchor, bottom: self.view.bottomAnchor, paddlingTop: 0, paddlingLeft: 0, paddlngBottom: -10, paddlingRight: 0, width: 0, height: 50)
+
+    }
+    @objc func handlebackButton() {
+
+           navigationController?.popViewController(animated: true)
+       }
+
 
     //before adding stackview
 
@@ -249,11 +294,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
   }
+
+
     //disable the autorotation of the device
 */
-
-
-    override open var shouldAutorotate: Bool {
+override open var shouldAutorotate: Bool {
         return false
     }
 
@@ -271,7 +316,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.addSubview(stackView)
 
         //using the extension at most here
-        stackView.anchor(top: AddPhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, bottom: nil, paddlingTop: 20, paddlingLeft: 30, paddlngBottom: 0, paddlingRight: 30, width: 0, height: 200)
+        stackView.anchor(top: AddPhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, bottom: nil, paddlingTop: 40, paddlingLeft: 30, paddlngBottom: 0, paddlingRight: 30, width: 0, height: 200)
 
 
         /* by using the extension you can reuse the anchor at at more convient way */
