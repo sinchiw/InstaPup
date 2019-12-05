@@ -14,7 +14,7 @@ import FirebaseCore
 
 
 
-class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
 
     override func viewDidLoad() {
@@ -35,7 +35,12 @@ class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINa
 //        view.addSubview(label)
 
         setupInputField()
+        delegateTextField()
         haveAnAccountButton()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
 
@@ -128,6 +133,41 @@ class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINa
         return button
 
     }()
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        userNameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true;
+    }
+
+    func delegateTextField(){
+        userNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+
+     }
+
+    @objc func keyboardWillChange(notification: NSNotification) {
+        print("keyboard will show: \(notification.name.rawValue)")
+        guard let keyboardHeight = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillHideNotification {
+            view.frame.origin.y = -keyboardHeight.height
+        } else {
+            view.frame.origin.y = 0
+        }
+
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+
+
 
      @objc func handleSignUp() {
         print("Sign Up button")
