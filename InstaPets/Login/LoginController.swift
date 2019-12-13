@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Pastel
-
+import FirebaseAuth
 
 class LoginController: UIViewController, UITextFieldDelegate {
 
@@ -32,16 +32,16 @@ class LoginController: UIViewController, UITextFieldDelegate {
 
     //MARK: UserName TextField
 
-    let userNameTextField: UITextField = {
+    let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.text = "meowFuzzy"
-        textField.placeholder = " Username"
+        textField.text = "moo@aol.com"
+        textField.placeholder = "Email"
         textField.backgroundColor = .init(white: 0, alpha: 0.135)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
 
-        //            textField.addTarget(self, action: #selector(handleTextInput), for: .editingChanged)
-        //        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(handleTextInput), for: .editingChanged)
+                textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
 
@@ -54,8 +54,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         textField.backgroundColor = .init(white: 0, alpha: 0.135)
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
-        //            textField.addTarget(self, action: #selector(handleTextInput), for: .editingChanged)
-        //        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(handleTextInput), for: .editingChanged)
+                textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
 
@@ -68,7 +68,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
 
 
 
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle("Log In", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
         //setup the edges of the buttons
@@ -76,7 +76,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         //disable the button action
         button.isEnabled = false
         //add action for the button
-        //            button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+                    button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
 
     }()
@@ -101,8 +101,47 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
 
 
+    //MARK: Button change color if sign up is filled
+    @objc func handleTextInput() {
+
+        let formValid = emailTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0 && emailTextField.text?.count ?? 0 > 0
+        if formValid {
+            logInButton.isEnabled = true
+            logInButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        } else {
+            logInButton.isEnabled = false
+            logInButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 250)
+        }
+    }
+
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let err = error{
+                print("Failed to sign in with Email, \(err.localizedDescription)")
+                return
+            }
+
+            print("Succesfully Login",user?.user.uid ?? "")
+            //Reset the ui screen
+            let window = UIApplication.shared.windows.filter{$0.isKeyWindow}.first
+
+            guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {return}
+            mainTabBarController.setUpViewController()
+            self.dismiss(animated: true, completion: nil)
+
+
+        }
+
+
+    }
+
+
+
     func delegateTextField(){
-        userNameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
 
     }
@@ -165,7 +204,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     fileprivate func setupInputField() {
 
         //adding the view into stackview
-        let stackView = UIStackView(arrangedSubviews: [userNameTextField, passwordTextField, logInButton])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, logInButton])
 
 
         //stackview properties
@@ -191,7 +230,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
-        userNameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true;
     }

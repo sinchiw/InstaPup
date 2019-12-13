@@ -153,7 +153,7 @@ class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINa
         print("keyboard will show: \(notification.name.rawValue)")
         guard let keyboardHeight = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillHideNotification {
-            view.frame.origin.y = -keyboardHeight.height
+            view.frame.origin.y = -keyboardHeight.height/2
         } else {
             view.frame.origin.y = 0
         }
@@ -217,6 +217,14 @@ class SignUpController : UIViewController, UIImagePickerControllerDelegate, UINa
                         }
 
                         print("succesfully saved in the database")
+
+                        //Reset the ui screen
+                        let window = UIApplication.shared.windows.filter{$0.isKeyWindow}.first
+
+                        guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {return}
+                        mainTabBarController.setUpViewController()
+                        self.dismiss(animated: true, completion: nil)
+
 
                     }
                 }

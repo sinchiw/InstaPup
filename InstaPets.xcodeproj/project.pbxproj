@@ -22,6 +22,7 @@
 		CEABD899236B408D00A88BB3 /* InstaPetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD898236B408D00A88BB3 /* InstaPetsTests.swift */; };
 		CEABD8A4236B408D00A88BB3 /* InstaPetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8A3236B408D00A88BB3 /* InstaPetsUITests.swift */; };
 		CEABD8B3236B6AAF00A88BB3 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD8B2236B6AAF00A88BB3 /* ExtensionColors.swift */; };
+		CEB51A3D23A4487900F14454 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB51A3C23A4487900F14454 /* PhotoSelectorController.swift */; };
 		CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE626292384CACF005471DE /* MainTabBarController.swift */; };
 		CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6262B2384DA4E005471DE /* UserProfileController.swift */; };
 		CEE6262E2384E6BF005471DE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6262D2384E6BF005471DE /* Storyboard.storyboard */; };
@@ -75,6 +76,7 @@
 		CEABD8A3236B408D00A88BB3 /* InstaPetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPetsUITests.swift; sourceTree = "<group>"; };
 		CEABD8A5236B408D00A88BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEABD8B2236B6AAF00A88BB3 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
+		CEB51A3C23A4487900F14454 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		CEE626292384CACF005471DE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CEE6262B2384DA4E005471DE /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CEE6262D2384E6BF005471DE /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		CEABD87D236B408C00A88BB3 /* InstaPets */ = {
 			isa = PBXGroup;
 			children = (
+				CEB51A3B23A4485700F14454 /* Add Photo */,
 				CEABD8B1236B6A8000A88BB3 /* Utilities */,
 				CEE626352387135E005471DE /* Profile */,
 				CEE626292384CACF005471DE /* MainTabBarController.swift */,
@@ -198,6 +201,14 @@
 				CEE6263323871242005471DE /* ExtensionView.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CEB51A3B23A4485700F14454 /* Add Photo */ = {
+			isa = PBXGroup;
+			children = (
+				CEB51A3C23A4487900F14454 /* PhotoSelectorController.swift */,
+			);
+			path = "Add Photo";
 			sourceTree = "<group>";
 		};
 		CEE626352387135E005471DE /* Profile */ = {
@@ -487,6 +498,7 @@
 				CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */,
 				CEE626322385D9D0005471DE /* UserProfileHeader.swift in Sources */,
 				CEFB6F4323957C8700F43C15 /* ExtnesionAlertView.swift in Sources */,
+				CEB51A3D23A4487900F14454 /* PhotoSelectorController.swift in Sources */,
 				CEABD889236B408C00A88BB3 /* InstaPets.xcdatamodeld in Sources */,
 				CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */,
 				CEABD87F236B408C00A88BB3 /* AppDelegate.swift in Sources */,
