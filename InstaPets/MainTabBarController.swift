@@ -35,7 +35,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
          check if the user isnt log in 
          */
         self.delegate = self
-
+//        navigationController?.navigationBar.backgroundColor = .white
         if Auth.auth().currentUser == nil {
 
             //show if not logg in
@@ -43,6 +43,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
                 let loginController = LoginController()
                 let navController = UINavigationController(rootViewController: loginController)
                 navController.modalPresentationStyle = .fullScreen
+                
                 self.present(navController, animated: true, completion: nil)
             }
             return
@@ -55,7 +56,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
     }
 
     func setUpViewController(){
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
 
         //MARK: home controller
         //        let homeController = UIViewController()
@@ -63,7 +64,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
         //
         //        homeNavController.tabBarItem.selectedImage =  UIImage(named: "home_selected")
         //        homeNavController.tabBarItem.image = UIImage(named: "home_unselected")
-        let homeNaVController = templateNavController(uselectedImage: UIImage(named:"home_selected")!, selectedImage: UIImage(named:"home_unselected")!,rootViewController: UserProfileController(collectionViewLayout: UICollectionViewFlowLayout()))
+        let homeNaVController = templateNavController(uselectedImage: UIImage(named:"home_selected")!, selectedImage: UIImage(named:"home_unselected")!,rootViewController: HomeViewController(collectionViewLayout: UICollectionViewFlowLayout()))
 
         //MARK: User Profile
         //flowlout, collection view in horizontal or vertical
@@ -82,7 +83,8 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
         //MARK: add Photo Controller
 
         let  addNaVController = templateNavController(uselectedImage: UIImage(named:"plus_unselected")!, selectedImage: UIImage(named: "plus_unselected")!)
-        tabBar.tintColor = .black
+//        tabBar.tintColor = .black
+
         viewControllers = [homeNaVController,
                            searchNavController,
                            addNaVController,
@@ -101,6 +103,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = uselectedImage
         navController.tabBarItem.selectedImage = selectedImage
+        navController.navigationBar.backgroundColor = .white
         return navController
 
     }
