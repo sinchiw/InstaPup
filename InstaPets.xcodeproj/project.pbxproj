@@ -12,7 +12,9 @@
 		81B57FDEFA37DD8C3DCC51DE /* Pods_InstaPets_InstaPetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F40F4475B0DD13E8619CD7 /* Pods_InstaPets_InstaPetsUITests.framework */; };
 		CE05A4DA23982C52000A1A0B /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05A4D923982C52000A1A0B /* FontExtension.swift */; };
 		CE05A4DC23995793000A1A0B /* AninmationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05A4DB23995793000A1A0B /* AninmationExtension.swift */; };
+		CE0DABE123BD5960005DE224 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DABE023BD5960005DE224 /* SearchViewController.swift */; };
 		CE183F2B237BA7CE0074EDC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE183F2A237BA7CD0074EDC3 /* GoogleService-Info.plist */; };
+		CE81DC8A23C3C68800296F87 /* CustomSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81DC8923C3C68800296F87 /* CustomSearchCell.swift */; };
 		CEABD87F236B408C00A88BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD87E236B408C00A88BB3 /* AppDelegate.swift */; };
 		CEABD881236B408C00A88BB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD880236B408C00A88BB3 /* SceneDelegate.swift */; };
 		CEABD883236B408C00A88BB3 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABD882236B408C00A88BB3 /* SignUpController.swift */; };
@@ -70,7 +72,9 @@
 		B9703C24B15BAE3CFC20B5DE /* Pods-InstaPets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPets/Pods-InstaPets.debug.xcconfig"; sourceTree = "<group>"; };
 		CE05A4D923982C52000A1A0B /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		CE05A4DB23995793000A1A0B /* AninmationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AninmationExtension.swift; sourceTree = "<group>"; };
+		CE0DABE023BD5960005DE224 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE183F2A237BA7CD0074EDC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE81DC8923C3C68800296F87 /* CustomSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchCell.swift; sourceTree = "<group>"; };
 		CEABD87B236B408C00A88BB3 /* InstaPets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaPets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEABD87E236B408C00A88BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEABD880236B408C00A88BB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE8AB5DC23BD545D00DC17BA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CE0DABE023BD5960005DE224 /* SearchViewController.swift */,
+				CE81DC8923C3C68800296F87 /* CustomSearchCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		CEABD872236B408C00A88BB3 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		CEABD87D236B408C00A88BB3 /* InstaPets */ = {
 			isa = PBXGroup;
 			children = (
+				CE8AB5DC23BD545D00DC17BA /* Search */,
 				CEB51A3B23A4485700F14454 /* Add Photo */,
 				CEABD8B1236B6A8000A88BB3 /* Utilities */,
 				CEB51A4B23B54F4300F14454 /* Home */,
@@ -543,6 +557,7 @@
 				CEABD883236B408C00A88BB3 /* SignUpController.swift in Sources */,
 				CEB51A4323A86C9500F14454 /* SharePhotoController.swift in Sources */,
 				CEB51A4D23B54F6100F14454 /* HomeViewController.swift in Sources */,
+				CE0DABE123BD5960005DE224 /* SearchViewController.swift in Sources */,
 				CEE6262A2384CACF005471DE /* MainTabBarController.swift in Sources */,
 				CEE626322385D9D0005471DE /* UserProfileHeader.swift in Sources */,
 				CEFB6F4323957C8700F43C15 /* ExtnesionAlertView.swift in Sources */,
@@ -550,6 +565,7 @@
 				CEB51A3D23A4487900F14454 /* PhotoSelectorController.swift in Sources */,
 				CEB51A4A23AA8BEA00F14454 /* CustomImageView.swift in Sources */,
 				CEF2AA0E23BAE14900E404B3 /* UIDExtension.swift in Sources */,
+				CE81DC8A23C3C68800296F87 /* CustomSearchCell.swift in Sources */,
 				CEABD889236B408C00A88BB3 /* InstaPets.xcdatamodeld in Sources */,
 				CEE6262C2384DA4E005471DE /* UserProfileController.swift in Sources */,
 				CEABD87F236B408C00A88BB3 /* AppDelegate.swift in Sources */,

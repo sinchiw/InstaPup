@@ -10,6 +10,7 @@
 import UIKit
 import FirebaseAuth
 
+
 class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
 
 
@@ -59,11 +60,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
         view.backgroundColor = .white
 
         //MARK: home controller
-        //        let homeController = UIViewController()
-        //        let homeNavController = UINavigationController(rootViewController: homeController)
-        //
-        //        homeNavController.tabBarItem.selectedImage =  UIImage(named: "home_selected")
-        //        homeNavController.tabBarItem.image = UIImage(named: "home_unselected")
+
         let homeNaVController = templateNavController(uselectedImage: UIImage(named:"home_selected")!, selectedImage: UIImage(named:"home_unselected")!,rootViewController: HomeViewController(collectionViewLayout: UICollectionViewFlowLayout()))
 
         //MARK: User Profile
@@ -78,7 +75,8 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
 
 
         //MARK: search controller
-        let searchNavController = templateNavController(uselectedImage: UIImage(named: "search_selected")!, selectedImage: UIImage(named: "search_unselected")!)
+        let searchNavController = templateNavController(uselectedImage: UIImage(named: "search_selected")!, selectedImage:  UIImage(named: "search_unselected")!, rootViewController: SearchViewController(collectionViewLayout: UICollectionViewFlowLayout()))
+
 
         //MARK: add Photo Controller
 

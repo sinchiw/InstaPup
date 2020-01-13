@@ -17,14 +17,18 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                collectionView.backgroundColor = .white
-        collectionView.register(HomePostCell.self, forCellWithReuseIdentifier: cellId)
-        setUpNavItem()
+        registerCollectionCell()
+        setUpNavItemTitle()
         fetchPosts()
     }
 
-    func setUpNavItem(){
+    func setUpNavItemTitle(){
         navigationItem.title = "InstaPets"
+    }
+
+    func registerCollectionCell(){
+        collectionView.backgroundColor = .white
+         collectionView.register(HomePostCell.self, forCellWithReuseIdentifier: cellId)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -52,21 +56,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     var posts = [Post]()
        fileprivate func fetchPosts(){
             guard let uid = Auth.auth().currentUser?.uid else {return}
-        Database.fetchUserWithUID(uid: uid)
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-
-            guard let userDictionary = snapshot.value as? [String: Any] else {return}
-            print("the value of userdictionary", userDictionary)
-            let user = User(uid: uid, dictionary: userDictionary)
-//            print("user is", user.)
+        Database.fetchUserWithUID(uid: uid) {(user) in
             self.fetchPostWithUser(user: user)
-            print(snapshot.value!)
-
-
-        }) { (err) in
-            print("error", err)
+            print("finish fecthing user")
         }
-
+        
 
 
 
@@ -96,6 +90,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                    //                    let post = Post(dictionary: dictionary)
                                        print(post.imageUrl)
                                        self.posts.append(post)
+//                                    self.collectionView.reloadData()
                                    })
                                    self.collectionView.reloadData()
 

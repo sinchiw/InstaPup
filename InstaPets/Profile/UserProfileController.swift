@@ -19,7 +19,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
     let cellId = "cellId"
     var posts = [Post]()
     override func viewDidLoad() {
-        super .viewDidLoad()
+        super.viewDidLoad()
 
         backgroundColor()
         fecthUser()
@@ -27,10 +27,14 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
         setupLogOutButton()
 //        fetchPosts()
         setupEditButton()
-        fetchOrderPost()
+//        fetchOrderPost()
 
         //change the size of the thing to lower the sizer of the image
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+ fetchOrderPost()
     }
 
     func backgroundColor(){
@@ -146,20 +150,27 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
     fileprivate func fecthUser() {
 
         guard let uid = Auth.auth().currentUser?.uid else {return}
-        
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot.value!)
-            guard let dictionary = snapshot.value as? [String:Any] else {return}
-//            let userName = dictionary["username"] as? String
-            print(dictionary)
-            self.user = User(uid:uid, dictionary: dictionary)
-            
-            self.navigationItem.title = self.user?.username
-            self.navigationController?.navigationBar.backgroundColor = .white
-//            print(self.user!.profileImageUrl)
-            self.collectionView?.reloadData()
+        Database.fetchUserWithUID(uid: uid) { (user) in
+                        self.user = user
 
+                        self.navigationItem.title = self.user?.username
+                        self.navigationController?.navigationBar.backgroundColor = .white
+            //            print(self.user!.profileImageUrl)
+                        self.collectionView?.reloadData()
         }
+//        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+//            print(snapshot.value!)
+//            guard let dictionary = snapshot.value as? [String:Any] else {return}
+////            let userName = dictionary["username"] as? String
+//            print(dictionary)
+//            self.user = User(uid:uid, dictionary: dictionary)
+//
+//            self.navigationItem.title = self.user?.username
+//            self.navigationController?.navigationBar.backgroundColor = .white
+////            print(self.user!.profileImageUrl)
+//            self.collectionView?.reloadData()
+//
+//        }
 
 
 
@@ -175,14 +186,22 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
             guard let dictionary = snapshot.value as? [String: Any] else {return}
 
             guard let user = self.user else {return}
+
             let post = Post(user: user, dictionary: dictionary)
-//            self.posts.append(post)
+            self.posts.append(post)
             self.posts.insert(post, at: 0)
+//            var paths = [IndexPath]()
+//                       let path = IndexPath(row: 0, section: 0)
+//                       paths.append(path)
+
+
             self.collectionView?.reloadData()
+//            self.collectionView?.insertItems(at: paths)
 
         }) { (err) in
             print("failed to fetch", err)
         }
+
     }
 
 //    fileprivate func fetchPosts(){
