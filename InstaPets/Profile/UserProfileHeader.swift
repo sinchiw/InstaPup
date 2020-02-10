@@ -16,7 +16,7 @@ class UserProfileHeader: UICollectionViewCell {
 
     var user: User? {
         didSet {
-            print("did set the username into ",user?.username ?? "")
+//            print("did set the username into ",user?.username ?? "")
             guard let profileImageUrl = user?.profileImageUrl else {return}
             profileImageView.loadImage(urlString: profileImageUrl)
             

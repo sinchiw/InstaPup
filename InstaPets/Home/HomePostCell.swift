@@ -14,7 +14,7 @@ class HomePostCell: UICollectionViewCell {
 
     var post: Post?{
         didSet{
-            print(post?.imageUrl)
+//            print(post?.imageUrl)
             guard let postImageUrl = post?.imageUrl else {return}
             photoImageView.loadImage(urlString: postImageUrl)
             userNameLabel.text = post?.user.username

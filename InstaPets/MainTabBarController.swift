@@ -75,7 +75,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
 
 
         //MARK: search controller
-        let searchNavController = templateNavController(uselectedImage: UIImage(named: "search_selected")!, selectedImage:  UIImage(named: "search_unselected")!, rootViewController: SearchViewController(collectionViewLayout: UICollectionViewFlowLayout()))
+        let searchNavController = templateNavController(uselectedImage: UIImage(named: "search_selected")!, selectedImage:  UIImage(named: "search_unselected")!, rootViewController: UserSearchViewController(collectionViewLayout: UICollectionViewFlowLayout()))
 
 
         //MARK: add Photo Controller
@@ -101,18 +101,18 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate {
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = uselectedImage
         navController.tabBarItem.selectedImage = selectedImage
-        navController.navigationBar.backgroundColor = .white
+//        navController.navigationBar.backgroundColor = .white
         return navController
 
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        if let vcs = viewControllers {
-            for (_,vc) in vcs.enumerated() {
-                vc.view.removeFromSuperview()
-            }
-        }
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        if let vcs = viewControllers {
+//            for (_,vc) in vcs.enumerated() {
+//                vc.view.removeFromSuperview()
+//            }
+//        }
+//    }
 
 }

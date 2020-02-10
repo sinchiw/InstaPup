@@ -27,8 +27,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
 
     func registerCollectionCell(){
-        collectionView.backgroundColor = .white
-         collectionView.register(HomePostCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.backgroundColor = .white
+         collectionView?.register(HomePostCell.self, forCellWithReuseIdentifier: cellId)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

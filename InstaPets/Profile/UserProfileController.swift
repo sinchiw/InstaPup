@@ -18,6 +18,7 @@ import FirebaseDatabase
 class UserProfileController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
     var posts = [Post]()
+    var userId : String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +27,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
         registerCollectionView()
         setupLogOutButton()
 //        fetchPosts()
-        setupEditButton()
+//        setupEditButton()
 //        fetchOrderPost()
 
         //change the size of the thing to lower the sizer of the image
@@ -34,7 +35,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
- fetchOrderPost()
+// fetchOrderPost()
     }
 
     func backgroundColor(){
@@ -148,8 +149,9 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
     var user: User?
     //MARK: fecth user func
     fileprivate func fecthUser() {
+        let uid = userId ?? (Auth.auth().currentUser?.uid ?? "")
 
-        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
         Database.fetchUserWithUID(uid: uid) { (user) in
                         self.user = user
 
@@ -157,6 +159,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
                         self.navigationController?.navigationBar.backgroundColor = .white
             //            print(self.user!.profileImageUrl)
                         self.collectionView?.reloadData()
+            self.fetchOrderPost()
         }
 //        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
 //            print(snapshot.value!)
@@ -177,7 +180,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
     }
 
     fileprivate func fetchOrderPost() {
-         guard let uid = Auth.auth().currentUser?.uid else {return}
+        guard let uid = self.user?.uid else {return}
          let ref = Database.database().reference().child("posts").child(uid)
 
         /* perhap later on well implement some pagination of data*/
