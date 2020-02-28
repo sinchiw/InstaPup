@@ -65,11 +65,7 @@ class UserSearchViewController: UICollectionViewController, UICollectionViewDele
         navigationItem.titleView = searchBar
         searchBar.placeholder = "Enter Username"
         searchBar.sizeToFit()
-//        navigationItem.titleView = searchBar
-//        hidesNavigationBarDuringPresentation = false
-//        navigationController?.navigationBar.addSubview(searchBar)
-//        let navBar = navigationController?.navigationBar
-//        searchBar.anchor(top: navBar?.topAnchor, left: navBar?.leftAnchor, right: navBar?.rightAnchor, bottom: navBar?.bottomAnchor, paddlingTop: 8, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 8, width: 0, height: 0)
+
 
         collectionView?.alwaysBounceVertical = true
         fetchUser()

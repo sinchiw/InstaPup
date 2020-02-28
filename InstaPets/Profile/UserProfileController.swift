@@ -65,7 +65,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
 
     //MARK: header section of the app, profile, follower.....etc
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 315)
     }
 
 

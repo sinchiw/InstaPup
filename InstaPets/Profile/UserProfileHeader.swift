@@ -29,6 +29,9 @@ class UserProfileHeader: UICollectionViewCell {
         = {
             let iv = CustomImageView()
             iv.backgroundColor = .gray
+//            iv.layer.cornerRadius = (iv.image?.size.width ?? 0) / 2
+            
+
             //        iv.image = UserProfileHeader.setupProfileImage(UserProfileHeader)
             return iv
     }()
@@ -108,21 +111,27 @@ class UserProfileHeader: UICollectionViewCell {
         return statview
     }()
 
+    let followButton : UIButton = {
+        let button = UIButton()
+        button.setTitle("Follow", for: .normal)
+        return button
+    }()
+
 
 
     //MARK: edit Profile Button
-//    let editProfileButton : UIButton = {
-//        let button = UIButton()
-//        button.setTitle("Edit", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
-//        button.titleLabel?.textAlignment = .center
-//        button.layer.borderColor = UIColor.lightGray.cgColor
-//        button.layer.borderWidth = 1
-//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-//
-//        return button
-//    }()
-//
+    let editProfileButton : UIButton = {
+        let button = UIButton()
+        button.setTitle("Edit", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+
+        return button
+    }()
+
 
 
 
@@ -133,12 +142,17 @@ class UserProfileHeader: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         //to give a better view
-//        backgroundColor = .blue 
+
 
         addSubview(profileImageView)
         addSubview(statView)
+        addSubview(editProfileButton)
         /*using the extension for this*/
-        profileImageView.anchor(top: topAnchor, left: nil, right: nil, bottom: statView.topAnchor, paddlingTop: 11, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 90, height: 200)
+
+        profileImageView.layer.cornerRadius = 150 / 2
+        profileImageView.clipsToBounds = true
+        profileImageView.anchor(top: topAnchor, left: nil, right: nil, bottom: nil, paddlingTop: 5, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 150, height: 200)
+
         profileImageView.centerXAnchor.constraint(equalTo: statView.centerXAnchor, constant: 0).isActive = true
         //make it round
         statView.addArrangedSubview(postLabel)
@@ -146,16 +160,25 @@ class UserProfileHeader: UICollectionViewCell {
         statView.addArrangedSubview(followingLabel)
 
         statView.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: nil, paddlingTop: 10, paddlingLeft: 12, paddlngBottom: 0, paddlingRight: 12, width: 0, height: 50)
+        editProfileButton.anchor(top: statView.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: nil, paddlingTop: 10, paddlingLeft: 12, paddlngBottom: 0, paddlingRight: 12, width: 0, height: 30)
 //        profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 
-        profileImageView.layer.cornerRadius = 80 / 2
-        profileImageView.clipsToBounds = true
-        /*let stackView = UIStackView(arrangedSubviews: [postLabel, followLabel, followingLabel])
-        stackView.distribution = .fillEqually
-        addSubview(stackView)
+//        let stackView = UIStackView(arrangedSubviews: [postLabel, followLabel, followingLabel])
+//        stackView.distribution = .fillEqually
+//        addSubview(stackView)
+//
+//        stackView.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: nil, paddlingTop: 10, paddlingLeft: 12, paddlngBottom: 0, paddlingRight: 12, width: 0, height: 50)
+//*/
 
-        stackView.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: nil, paddlingTop: 10, paddlingLeft: 12, paddlngBottom: 0, paddlingRight: 12, width: 0, height: 50)
-*/
+
+
+
+
+
+
+
+
+
         let topDividerView = UIView()
               topDividerView.backgroundColor = UIColor.lightGray
 
@@ -173,21 +196,31 @@ class UserProfileHeader: UICollectionViewCell {
               /*
                left bottom right and the middle
                */
-        stackview2.anchor(top: statView.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: bottomAnchor, paddlingTop: 5, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 0, height: 51)
+            stackview2.anchor(top: editProfileButton.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: bottomAnchor, paddlingTop: 10, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 0, height: 51)
               /*the thin line on the top of the toolbarview*/
               topDividerView.anchor(top: stackview2.topAnchor, left: leftAnchor, right: rightAnchor, bottom: nil, paddlingTop: 0, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 0, height: 0.5)
               bottomDIviderVIew.anchor(top: nil, left: leftAnchor, right: rightAnchor, bottom: stackview2.bottomAnchor, paddlingTop: 0, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 0, height: 0.5)
 
-//        setUpBottomToolBar()
 
+
+
+
+
+
+
+
+
+//
+//        setUpBottomToolBar()
+//
 //        addSubview(userNameLabel)
 //        userNameLabel.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, bottom: gridButton.topAnchor, paddlingTop: 4, paddlingLeft: 12, paddlngBottom: 0, paddlingRight: 12, width: 0, height: 0)
-
+//
 //        setUpStatsView()
-
+//
 //        addSubview(editProfileButton)
 //        editProfileButton.anchor(top: postLabel.bottomAnchor, left: postLabel.leftAnchor, right: followingLabel.rightAnchor, bottom: nil, paddlingTop: 8, paddlingLeft: 0, paddlngBottom: 0, paddlingRight: 0, width: 0, height: 34)
-
+//
 
     }
 
