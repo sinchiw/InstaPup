@@ -191,7 +191,7 @@ class UserProfileController : UICollectionViewController, UICollectionViewDelega
             guard let user = self.user else {return}
 
             let post = Post(user: user, dictionary: dictionary)
-            self.posts.append(post)
+//            self.posts.append(post)
             self.posts.insert(post, at: 0)
 //            var paths = [IndexPath]()
 //                       let path = IndexPath(row: 0, section: 0)

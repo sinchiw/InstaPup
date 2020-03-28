@@ -22,6 +22,48 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         fetchPosts()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//         fetchPosts()
+    }
+
+        fileprivate func fetchPostWithUser(user: User){
+
+    //        guard let uid = Auth.auth().currentUser?.uid else {return}
+
+
+            let ref = Database.database().reference().child("posts").child(user.uid)
+                                   ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                                       /*access dictionary */
+
+                                       guard let dictionaries = snapshot.value as? [String: Any] else {return}
+
+
+                                       dictionaries.forEach({ (key, value) in
+                                           /*to seperat from each key*/
+
+                                           guard let dictionary = value as? [String:Any] else {return}
+                           //                let imageUrl = dictionary["imageUrl"]as? String
+                                           print("look at this ", dictionary)
+                           //                print("imageUrl:\(imageUrl)")
+
+                                           let post = Post(user: user, dictionary: dictionary)
+                       //                    let post = Post(dictionary: dictionary)
+                                           print(post.imageUrl)
+                                           self.posts.append(post)
+    //                                    self.collectionView.reloadData()
+                                       })
+                                       self.collectionView.reloadData()
+
+                                   })
+
+                                   { (error) in
+                                       print("error", error)
+
+                                   }
+
+        }
+
     func setUpNavItemTitle(){
         navigationItem.title = "InstaPets"
     }
@@ -54,8 +96,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return cell
     }
     var posts = [Post]()
-       fileprivate func fetchPosts(){
-            guard let uid = Auth.auth().currentUser?.uid else {return}
+    fileprivate func fetchPosts(){
+        guard let uid = Auth.auth().currentUser?.uid else {return}
         Database.fetchUserWithUID(uid: uid) {(user) in
             self.fetchPostWithUser(user: user)
             print("finish fecthing user")
@@ -66,41 +108,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         }
 
-    fileprivate func fetchPostWithUser(user: User){
 
-//        guard let uid = Auth.auth().currentUser?.uid else {return}
-
-
-        let ref = Database.database().reference().child("posts").child(user.uid)
-                               ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                                   /*access dictionary */
-
-                                   guard let dictionaries = snapshot.value as? [String: Any] else {return}
-
-
-                                   dictionaries.forEach({ (key, value) in
-                                       /*to seperat from each key*/
-                       //                print("Key\(key), Value: \(value)")
-                                       guard let dictionary = value as? [String:Any] else {return}
-                       //                let imageUrl = dictionary["imageUrl"]as? String
-                                       print("look at this ", dictionary)
-                       //                print("imageUrl:\(imageUrl)")
-
-                                       let post = Post(user: user, dictionary: dictionary)
-                   //                    let post = Post(dictionary: dictionary)
-                                       print(post.imageUrl)
-                                       self.posts.append(post)
-//                                    self.collectionView.reloadData()
-                                   })
-                                   self.collectionView.reloadData()
-
-                               })
-
-                               { (error) in
-                                   print("error", error)
-
-                               }
-
-    }
 }
 

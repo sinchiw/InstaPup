@@ -102,10 +102,12 @@ class SharePhotoController: UIViewController {
         print("sharing photo")
 
         let filename = NSUUID().uuidString
+//         guard let caption = textView.text, !caption.isEmpty else { return }
         guard let image = imageView.image else {return}
         /*or eihter one can be use*/
         guard let selectedImage = selectedImage else {return}
-        guard let uploadData = image.jpegData(compressionQuality: 0.5) else {return}
+        //march 28 change the image to selected image
+        guard let uploadData = selectedImage.jpegData(compressionQuality: 0.5) else {return}
 
         navigationItem.rightBarButtonItem?.isEnabled = false
 
